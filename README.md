@@ -3,6 +3,6 @@
 <h3>DASHBOARD</h3>
 <img src="./assets/1_neovim.png" width="500" />
 <h3>OIL FILEMANAGER</h3>
-<img src="./assets/2_neovim.png.png" width="500" />
+<img src="./assets/2_neovim.png" width="500" />
 <h3>Gruvbox Theme</h3>
 <img src="./assets/3_neovim.png" width="500" />
