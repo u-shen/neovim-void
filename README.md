@@ -7,9 +7,9 @@
 **A stellar Neovim config that floats in the void between minimalism and power** ✨
 
 <div align="center">
-  <img src="./assets/NEOVIM.png" alt="Preview" width="80%"/>
+  <img src="./assets/NEOVIM.png" alt="Preview" width="90%"/>
   <br>
-  <em>Add actual screenshot path here</em>
+  <em>focus on simplicity, clarity and frugality. My Philosophy</em>
 </div>
 
 ## 🌌 Features
