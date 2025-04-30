@@ -46,9 +46,23 @@
 **Launch Sequence**
 
 ```bash
-# Clone the repository
+# Linux/macOS
 git clone https://github.com/u-shen/neovim-void ~/.config/nvim
 
+# Windows (Command Prompt)
+git clone https://github.com/u-shen/neovim-void %USERPROFILE%\AppData\Local\nvim
+
+# Windows (powershell)
+git clone https://github.com/u-shen/neovim-void "$env:LOCALAPPDATA\nvim"
+
+```
+
 # Enter the event horizon
+
+```bash
 nvim
 ```
+
+---
+
+## Enjoy 🤗
