@@ -7,7 +7,7 @@
 **A stellar Neovim config that floats in the void between minimalism and power** ✨
 
 <div align="center">
-  <img src="https://placehold.co/800x400/000000/FFFFFF/png?text=Neovim+Void+Screenshot" alt="Preview" width="80%"/>
+  <img src="./assets/NEOVIM.png" alt="Preview" width="80%"/>
   <br>
   <em>Add actual screenshot path here</em>
 </div>
