@@ -4,40 +4,40 @@
 local palette
 if vim.o.background == "light" then
   -- palette = {
-  --   base00 = "#EFECF4",
-  --   base01 = "#E2DFE7",
-  --   base02 = "#8B8792",
-  --   base03 = "#7E7887",
-  --   base04 = "#655F6D",
-  --   base05 = "#585260",
-  --   base06 = "#26232A",
-  --   base07 = "#19171C",
-  --   base08 = "#BE4678",
-  --   base09 = "#AA573C",
-  --   base0A = "#A06E3B",
-  --   base0B = "#2A9292",
-  --   base0C = "#398BC6",
-  --   base0D = "#576DDB",
-  --   base0E = "#955AE7",
-  --   base0F = "#BF40BF",
-  -- },
+  --   base00 = "#F1E3D1",
+  --   base01 = "#DDCEBC",
+  --   base02 = "#C9B9A7",
+  --   base03 = "#B5A492",
+  --   base04 = "#A0907D",
+  --   base05 = "#64513E",
+  --   base06 = "#786653",
+  --   base07 = "#8C7B68",
+  --   base08 = "#D09700",
+  --   base09 = "#64513E",
+  --   base0A = "#993333",
+  --   base0B = "#908D6A",
+  --   base0C = "#d09700",
+  --   base0D = "#BF7979",
+  --   base0E = "#9E5581",
+  --   base0F = "#75858C",
+  -- }
   palette = {
-    base00 = "#F1E3D1",
-    base01 = "#DDCEBC",
-    base02 = "#C9B9A7",
-    base03 = "#B5A492",
-    base04 = "#A0907D",
-    base05 = "#64513E",
-    base06 = "#786653",
-    base07 = "#8C7B68",
-    base08 = "#D09700",
-    base09 = "#64513E",
-    base0A = "#993333",
-    base0B = "#908D6A",
-    base0C = "#d09700",
-    base0D = "#BF7979",
-    base0E = "#9E5581",
-    base0F = "#75858C",
+    base00 = "#EFECF4",
+    base01 = "#E2DFE7",
+    base02 = "#8B8792",
+    base03 = "#7E7887",
+    base04 = "#655F6D",
+    base05 = "#585260",
+    base06 = "#26232A",
+    base07 = "#19171C",
+    base08 = "#BE4678",
+    base09 = "#AA573C",
+    base0A = "#A06E3B",
+    base0B = "#2A9292",
+    base0C = "#398BC6",
+    base0D = "#576DDB",
+    base0E = "#955AE7",
+    base0F = "#BF40BF",
   }
 end
 if vim.o.background == "dark" then
@@ -155,25 +155,6 @@ if vim.o.background == "dark" then
   --   base0E = "#f6bbe7",
   --   base0F = "#eAc1c1"
   -- }
-  -- paradise
-  -- palette = {
-  --   base00 = "#151515",
-  --   base01 = "#1F1F1F",
-  --   base02 = "#2E2E2E",
-  --   base03 = "#424242",
-  --   base04 = "#BBB6B6",
-  --   base05 = "#E8E3E3",
-  --   base06 = "#E8E3E3",
-  --   base07 = "#E8E3E3",
-  --   base08 = "#B66467",
-  --   base09 = "#D9BC8C",
-  --   base0A = "#D9BC8C",
-  --   base0B = "#8C977D",
-  --   base0C = "#8AA6A2",
-  --   base0D = "#8DA3B9",
-  --   base0E = "#A988B0",
-  --   base0F = "#BBB6B6",
-  -- }
   -- Kanagawa
   -- palette = {
   --   base00 = "#181616",
@@ -193,13 +174,32 @@ if vim.o.background == "dark" then
   --   base0E = "#a292a3",
   --   base0F = "#7aa89f",
   -- }
+  -- paradise
+  -- palette = {
+  --   base00 = "#151515",
+  --   base01 = "#1F1F1F",
+  --   base02 = "#2E2E2E",
+  --   base03 = "#424242",
+  --   base04 = "#BBB6B6",
+  --   base05 = "#E8E3E3",
+  --   base06 = "#E8E3E3",
+  --   base07 = "#E8E3E3",
+  --   base08 = "#B66467",
+  --   base09 = "#c4b28a",
+  --   base0A = "#bdae93",
+  --   base0B = "#8C977D",
+  --   base0C = "#8AA6A2",
+  --   base0D = "#8DA3B9",
+  --   base0E = "#A988B0",
+  --   base0F = "#BBB6B6",
+  -- }
   -- everblush
   palette = {
     base00 = "#141b1e",
-    base01 = "#232a2d",
-    base02 = "#2d3437",
+    base01 = "#1e2527",
+    base02 = "#232a2d",
     base03 = "#404749",
-    base04 = "#888888",
+    base04 = "#b3b9b8",
     base05 = "#cacaca",
     base06 = "#d2d2d2",
     base07 = "#dadada",
@@ -217,26 +217,31 @@ if palette then
   require("mini.base16").setup({
     palette = palette,
   })
-  vim.g.colors_name = "Minibase-Core"
+  vim.g.colors_name = "minibase-core"
 end
 -- General: =====================================================================
+vim.api.nvim_set_hl(0, 'SignColumn', { bg = palette.base00 })
+vim.api.nvim_set_hl(0, 'Search', { fg = palette.base00, bg = palette.base09 })
+vim.api.nvim_set_hl(0, 'CurSearch', { fg = palette.base00, bg = palette.base0B })
 vim.api.nvim_set_hl(0, 'LineNr', { fg = palette.base03, bg = palette.base00 })
-vim.api.nvim_set_hl(0, 'Cursor', { fg = palette.base00, bg = "#a9b665" })
-vim.api.nvim_set_hl(0, 'FloatBorder', { fg = palette.base0B })
+vim.api.nvim_set_hl(0, 'Cursor', { fg = palette.base00, bg = palette.base0B })
+vim.api.nvim_set_hl(0, 'FloatBorder', { fg = palette.base0B, bg = palette.base00 })
+vim.api.nvim_set_hl(0, 'FloatTitle', { link = "FloatBorder" })
+vim.api.nvim_set_hl(0, 'NormalFloat', { link = "FloatBorder" })
 -- Pmenu: =====================================================================
-vim.api.nvim_set_hl(0, "Pmenu", { bg = palette.base00, fg = palette.base04 })
-vim.api.nvim_set_hl(0, "PmenuSel", { bg = palette.base02, fg = palette.base07 })
-vim.api.nvim_set_hl(0, "PmenuMatch", { fg = palette.base0B })
-vim.api.nvim_set_hl(0, "PmenuMatchSel", { fg = palette.base0B })
+vim.api.nvim_set_hl(0, "Pmenu", { bg = palette.base00, fg = palette.base04, bold = false, italic = false })
+vim.api.nvim_set_hl(0, "PmenuSel", { bg = palette.base01, fg = palette.base04, bold = true, italic = false })
+vim.api.nvim_set_hl(0, "PmenuMatch", { fg = palette.base0B, bold = true, italic = false })
+vim.api.nvim_set_hl(0, "PmenuExtra", { bg = palette.base00, fg = palette.base04, bold = true, italic = false })
+vim.api.nvim_set_hl(0, "PmenuMatchSel", { link = "PmenuMatch" })
 vim.api.nvim_set_hl(0, "PmenuSbar", { link = "Pmenu" })
-vim.api.nvim_set_hl(0, "PmenuThumb", { link = "Pmenu" })
-vim.api.nvim_set_hl(0, "PmenuExtra", { link = "Pmenu" })
-vim.api.nvim_set_hl(0, "PmenuKind", { link = "Pmenu" })
-vim.api.nvim_set_hl(0, "PmenuExtraSel", { link = "PmenuSel" })
-vim.api.nvim_set_hl(0, "PmenuKindSel", { link = "PmenuSel" })
+vim.api.nvim_set_hl(0, "PmenuThumb", { link = "PmenuSel" })
+vim.api.nvim_set_hl(0, "PmenuKind", { link = "PmenuExtra" })
+vim.api.nvim_set_hl(0, "PmenuExtraSel", { link = "PmenuExtra" })
+vim.api.nvim_set_hl(0, "PmenuKindSel", { link = "PmenuExtra" })
 -- Tabline: ===================================================================
-vim.api.nvim_set_hl(0, "MiniTablineCurrent", { fg = palette.base0B, bg = palette.base00, bold = true, italic = true })
-vim.api.nvim_set_hl(0, "MiniTablineHidden", { fg = palette.base03, bg = palette.base00, bold = true, italic = true })
+vim.api.nvim_set_hl(0, "MiniTablineCurrent", { fg = palette.base0B, bg = palette.base00, bold = true, italic = false })
+vim.api.nvim_set_hl(0, "MiniTablineHidden", { fg = palette.base03, bg = palette.base00, bold = true, italic = false })
 vim.api.nvim_set_hl(0, "MiniTablineVisible", { link = "MiniTablineCurrent" })
 vim.api.nvim_set_hl(0, "MiniTablineModifiedCurrent", { link = "MiniTablineCurrent" })
 vim.api.nvim_set_hl(0, "MiniTablineModifiedVisible", { link = "MiniTablineCurrent" })
@@ -252,40 +257,38 @@ vim.api.nvim_set_hl(0, "MiniStarterSection", { link = "MiniStarterHeader" })
 vim.api.nvim_set_hl(0, "MiniStarterHeadeMiniStarterQueryr", { link = "MiniStarterHeader" })
 vim.api.nvim_set_hl(0, "MiniStarterFooter", { link = "MiniStarterHeader" })
 -- Files: ======================================================================
-vim.api.nvim_set_hl(0, "MiniFilesBorder", { fg = palette.base0B, bg = palette.base00, bold = true, italic = true })
-vim.api.nvim_set_hl(0, "MiniFilesDirectory", { fg = palette.base07, bg = palette.base00, bold = true, italic = true })
-vim.api.nvim_set_hl(0, "MiniFilesCursorLine", { fg = palette.base00, bg = palette.base0B, bold = true, italic = true })
-vim.api.nvim_set_hl(0, "MiniFilesBorderModified",
-  { fg = palette.base0F, bg = palette.base00, bold = true, italic = true })
+vim.api.nvim_set_hl(0, "MiniFilesBorder", { fg = palette.base0B, bg = palette.base00, bold = false, italic = false })
+vim.api.nvim_set_hl(0, "MiniFilesDirectory", { fg = palette.base04, bold = false, italic = false })
+vim.api.nvim_set_hl(0, "MiniFilesNormal", { fg = palette.base04, bg = palette.base00, bold = false, italic = false })
+vim.api.nvim_set_hl(0, "MiniFilesCursorLine", { bg = palette.base01, bold = true, italic = false })
+vim.api.nvim_set_hl(0, "MiniFilesBorderModified", { link = "MiniFilesBorder" })
 vim.api.nvim_set_hl(0, "MiniFilesFile", { link = "MiniFilesDirectory" })
-vim.api.nvim_set_hl(0, "MiniFilesNormal", { link = "MiniFilesBorder" })
 vim.api.nvim_set_hl(0, "MiniFilesTitle", { link = "MiniFilesBorder" })
 vim.api.nvim_set_hl(0, "MiniFilesTitleFocused", { link = "MiniFilesBorder" })
--- PICKER: ====================================================================
-vim.api.nvim_set_hl(0, "MiniPickBorder", { fg = palette.base0B, bg = palette.base00, bold = true, italic = true })
-vim.api.nvim_set_hl(0, "MiniPickNormal", { fg = palette.base04, bg = palette.base00, bold = true, italic = true })
-vim.api.nvim_set_hl(0, "MiniPickMatchCurrent", { fg = palette.base00, bg = palette.base0B, bold = true, italic = true })
-vim.api.nvim_set_hl(0, "MiniPickMatchMarked", { link = "MiniPickBorder" })
-vim.api.nvim_set_hl(0, "MiniPickMatchRanges", { link = "MiniPickBorder" })
+-- Picker: ====================================================================
+vim.api.nvim_set_hl(0, "MiniPickBorder", { fg = palette.base0B, bg = palette.base00, bold = false, italic = false })
+vim.api.nvim_set_hl(0, "MiniPickNormal", { fg = palette.base04, bg = palette.base00, bold = false, italic = false })
+vim.api.nvim_set_hl(0, "MiniPickMatchCurrent", { bg = palette.base01, bold = true, italic = false })
+vim.api.nvim_set_hl(0, "MiniPickMatchMarked", { fg = palette.base0B, bg = palette.base00, bold = true, italic = false })
+vim.api.nvim_set_hl(0, "MiniPickPrompt", { fg = palette.base07, bg = palette.base00, bold = true, italic = false })
+vim.api.nvim_set_hl(0, "MiniPickMatchRanges", { link = "MiniPickMatchMarked" })
 vim.api.nvim_set_hl(0, "MiniPickPreviewRegion", { link = "MiniPickBorder" })
-vim.api.nvim_set_hl(0, "MiniPickPrompt", { link = "MiniPickBorder" })
 vim.api.nvim_set_hl(0, "MiniPickPreviewLine", { link = "MiniPickBorder" })
 vim.api.nvim_set_hl(0, "MiniPickBorderBusy", { link = "MiniPickBorder" })
 vim.api.nvim_set_hl(0, "MiniPickBorderText", { link = "MiniPickBorder" })
--- vim.api.nvim_set_hl(0, "MiniPickCursor", { link = "MiniPickBorder" })
 vim.api.nvim_set_hl(0, "MiniPickIconDirectory", { link = "MiniPickBorder" })
 vim.api.nvim_set_hl(0, "MiniPickIconFile", { link = "MiniPickBorder" })
 vim.api.nvim_set_hl(0, "MiniPickHeader", { link = "MiniPickBorder" })
 -- Snippets ====================================================================
-vim.api.nvim_set_hl(0, 'MiniSnippetsCurrent', { fg = palette.base04 })
+vim.api.nvim_set_hl(0, 'MiniSnippetsCurrent', { fg = palette.base0B })
 vim.api.nvim_set_hl(0, 'MiniSnippetsCurrentReplace', { link = "MiniSnippetsCurrent" })
 vim.api.nvim_set_hl(0, 'MiniSnippetsFinal', { link = "MiniSnippetsCurrent" })
 vim.api.nvim_set_hl(0, 'MiniSnippetsUnvisited', { link = "MiniSnippetsCurrent" })
 vim.api.nvim_set_hl(0, 'MiniSnippetsVisited', { link = "MiniSnippetsCurrent" })
--- Notidy =====================================================================
+-- Notify =====================================================================
 vim.api.nvim_set_hl(0, 'MiniNotifyBorder', { fg = palette.base0B, bg = palette.base00 })
-vim.api.nvim_set_hl(0, 'MiniNotifyLspProgress', { link = "MiniNotifyBorder" })
-vim.api.nvim_set_hl(0, 'MiniNotifyNormal', { link = "MiniNotifyBorder" })
+vim.api.nvim_set_hl(0, 'MiniNotifyNormal', { fg = palette.base03, bg = palette.base00 })
+vim.api.nvim_set_hl(0, 'MiniNotifyLspProgress', { link = "MiniNotifyNormal" })
 vim.api.nvim_set_hl(0, 'MiniNotifyTitle', { link = "MiniNotifyBorder" })
 -- Diff ========================================================================
 vim.api.nvim_set_hl(0, 'MiniDiffSignAdd', { fg = palette.base0B, bg = palette.base00 })
@@ -293,7 +296,7 @@ vim.api.nvim_set_hl(0, 'MiniDiffSignChange', { fg = palette.base0C, bg = palette
 vim.api.nvim_set_hl(0, 'MiniDiffSignDelete', { fg = palette.base08, bg = palette.base00 })
 -- Completions: ================================================================
 vim.api.nvim_set_hl(0, "MiniCompletionActiveParameter",
-  { fg = palette.base0B, bg = palette.base02, bold = true, italic = true })
+  { fg = palette.base0B, bg = palette.base01, bold = true, italic = true })
 vim.api.nvim_set_hl(0, "MiniCompletionInfoBorderOutdated", { link = "Mini.MiniCompletionActiveParameter" })
 -- CursorWord: =================================================================
 vim.api.nvim_set_hl(0, "MiniCursorword", { bg = palette.base02 })
@@ -301,3 +304,5 @@ vim.api.nvim_set_hl(0, "MiniCursorwordCurrent", { link = "MiniCursorword" })
 -- Indentscope: ================================================================
 vim.api.nvim_set_hl(0, "MiniIndentscopeSymbol", { fg = palette.base0B })
 vim.api.nvim_set_hl(0, "MiniIndentscopeSymbolOff", { link = "MiniIndentscopeSymbol" })
+-- Trailspace: ================================================================
+vim.api.nvim_set_hl(0, "MiniTrailspace", { bg = palette.base08 })

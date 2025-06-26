@@ -1,0 +1,7 @@
+return {
+  ["conform.nvim"] = "8132ec733eed3bf415b97b76797ca41b59f51d7d",
+  ["mini.nvim"] = "01dce72f2177de6044bcab60ebb8f8e56ade0936",
+  ["nvim-treesitter"] = "42fc28ba918343ebfd5565147a42a26580579482",
+  ["nvim-ts-autotag"] = "a1d526af391f6aebb25a8795cbc05351ed3620b5",
+  ["rainbow-delimiters.nvim"] = "55ad4fb76ab68460f700599b7449385f0c4e858e"
+}

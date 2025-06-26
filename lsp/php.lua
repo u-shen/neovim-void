@@ -1,20 +1,12 @@
 --          ╔═════════════════════════════════════════════════════════╗
---          ║                     Html LSP                            ║
+--          ║                       Php LSP                           ║
 --          ╚═════════════════════════════════════════════════════════╝
 return {
-  cmd = { "emmet-language-server", "--stdio" },
-  filetypes = {
-    "html",
-    "ejs",
-    "css",
-    "less",
-    "sass",
-    "scss",
-    "javascriptreact",
-    "typescriptreact",
+  cmd = { "phpactor", "language-server" },
+  filetypes = { "php" },
+  root_markers = {
+    "composer.json",
+    ".phpactor.json",
+    ".phpactor.yml",
   },
-  init_options = {
-    showSuggestionsAsSnippets = true,
-  },
-  root_markers = { 'package.json', '.git' }
 }

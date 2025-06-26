@@ -1,20 +1,12 @@
 --          ╔═════════════════════════════════════════════════════════╗
---          ║                     Html LSP                            ║
+--          ║                     Clang LSP                           ║
 --          ╚═════════════════════════════════════════════════════════╝
 return {
-  cmd = { "emmet-language-server", "--stdio" },
-  filetypes = {
-    "html",
-    "ejs",
-    "css",
-    "less",
-    "sass",
-    "scss",
-    "javascriptreact",
-    "typescriptreact",
-  },
+  cmd = { "clangd", "--background-index", "--clang-tidy", "--log=verbose" },
+  filetypes = { "c", "cpp" },
+  root_markers = { ".git", "compile_commands.json" },
   init_options = {
-    showSuggestionsAsSnippets = true,
+    fallbackFlag = { "-std=c++17" },
   },
-  root_markers = { 'package.json', '.git' }
+  settings = {},
 }

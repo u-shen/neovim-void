@@ -1,20 +1,13 @@
 --          ╔═════════════════════════════════════════════════════════╗
---          ║                     Html LSP                            ║
+--          ║                     Prisma LSP                          ║
 --          ╚═════════════════════════════════════════════════════════╝
 return {
-  cmd = { "emmet-language-server", "--stdio" },
-  filetypes = {
-    "html",
-    "ejs",
-    "css",
-    "less",
-    "sass",
-    "scss",
-    "javascriptreact",
-    "typescriptreact",
+  cmd = { "prisma-language-server", "--stdio" },
+  filetypes = { "prisma" },
+  root_markers = { ".git", "package.json" },
+  settings = {
+    prisma = {
+      prismaFmtBinPath = ""
+    }
   },
-  init_options = {
-    showSuggestionsAsSnippets = true,
-  },
-  root_markers = { 'package.json', '.git' }
 }
