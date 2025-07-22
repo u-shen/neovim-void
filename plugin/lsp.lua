@@ -1,7 +1,7 @@
 --          ╔═════════════════════════════════════════════════════════╗
 --          ║                       Keybiding LSP                     ║
 --          ╚═════════════════════════════════════════════════════════╝
--- Create keybindings, commands, inlay hints: ===========================================
+-- Create keybindings, commands, inlay hints: =================================================
 vim.api.nvim_create_autocmd("LspAttach", {
   callback = function(ev)
     local bufnr = ev.buf
@@ -21,18 +21,31 @@ vim.api.nvim_create_autocmd("LspAttach", {
       vim.bo[bufnr].tagfunc = "v:lua.vim.lsp.tagfunc"
     end
 
-    -- -- nightly has inbuilt completions: ==============================================
+    -- -- Built In Completions: =======================================================
     -- if client:supports_method("textDocument/completion", bufnr) then
-    --   -- Enable auto-completion
+    --   -- Optional: trigger autocompletion on EVERY keypress. May be slow!
+    --   local chars = {}
+    --   for i = 32, 126 do
+    --     table.insert(chars, string.char(i))
+    --   end
+    --   client.server_capabilities.completionProvider.triggerCharacters = chars
     --   vim.lsp.completion.enable(true, client.id, bufnr, { autotrigger = true })
     -- end
+    -- -- Built In Format: ============================================================
+    -- if not client:supports_method('textDocument/willSaveWaitUntil')
+    --     and client:supports_method('textDocument/formatting') then
+    --   vim.api.nvim_create_autocmd('BufWritePre', {
+    --     group = vim.api.nvim_create_augroup('my.lsp', { clear = false }),
+    --     buffer = bufnr,
+    --     callback = function()
+    --       vim.lsp.buf.format({ bufnr = bufnr, id = client.id, timeout_ms = 1000 })
+    --     end,
+    --   })
+    -- end
 
-    -- -- Mini.Completion support: ========================================================
-    -- vim.bo[bufnr].omnifunc = "v:lua.MiniCompletion.completefunc_lsp"
-    --
     --- Disable semantic tokens: =======================================================
     ---@diagnostic disable-next-line need-check-nil
-    -- client.server_capabilities.semanticTokensProvider = nil
+    client.server_capabilities.semanticTokensProvider = nil
 
     -- Disable the default keybinds: ====================================================
     for _, bind in ipairs({ "grn", "gra", "gri", "grr" }) do
